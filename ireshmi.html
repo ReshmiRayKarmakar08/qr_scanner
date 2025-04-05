@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reshmi's Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #fdf6ff, #fce4ec);
+      animation: fadeInBody 2s ease-in-out;
+    }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: linear-gradient(to right, #fff0f5, #ffe4e1);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .left {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #b030b0;
+      animation: slideLeft 1s ease-out;
+    }
+
+    @keyframes slideLeft {
+      from { transform: translateX(-100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    nav .right ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav .right ul li {
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav .right ul li:hover {
+      color: #ff69b4;
+      transform: scale(1.1);
+    }
+
+    .firstSection {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 80px;
+      flex-wrap: wrap;
+    }
+
+    .leftSection {
+      width: 50%;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #4b0082;
+      line-height: 1.5;
+      animation: floatText 2s ease-in-out;
+    }
+
+    @keyframes floatText {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .leftSection span.name {
+      color: #ff1493;
+      text-shadow: 1px 1px 2px #888;
+    }
+
+    .typed-container {
+      font-size: 1.8rem;
+      color: #6a0dad;
+      margin-top: 20px;
+      font-weight: 500;
+    }
+
+    .rightSection {
+      width: 45%;
+      perspective: 1000px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .rightSection img {
+      width: 100%;
+      transform: rotateY(20deg) rotateX(10deg);
+      box-shadow: 15px 20px 40px rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      transition: transform 0.5s ease, box-shadow 0.3s ease;
+    }
+
+    .rightSection img:hover {
+      transform: rotateY(0deg) rotateX(0deg) scale(1.05);
+      box-shadow: 5px 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .education {
+      text-align: center;
+      margin: 60px 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .education h2 {
+      font-size: 2rem;
+      color: #6a0dad;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 2px #ccc;
+    }
+
+    .edu-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .edu-card {
+      background-color: #fff0f8;
+      padding: 20px;
+      border-radius: 12px;
+      width: 280px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .edu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .edu-card h3 {
+      color: #b030b0;
+      margin-bottom: 10px;
+    }
+
+    .edu-card p {
+      color: #4b0082;
+      font-size: 1rem;
+    }
+
+    .socials {
+      text-align: center;
+      margin: 40px 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .socials h2 {
+      font-size: 2rem;
+      color: #6a0dad;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 2px #ccc;
+    }
+
+    .socials a {
+      font-size: 1.2rem;
+      color: #4b0082;
+      margin: 10px;
+      display: inline-block;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .socials a:hover {
+      color: #ff1493;
+      transform: translateY(-3px);
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .gallery img {
+      width: 300px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="left">Reshmi's Portfolio</div>
+      <div class="right">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Services</li>
+          <li>Projects</li>
+          <li>Contact Me</li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="firstSection">
+      <div class="leftSection">
+        Hi, my name is <span class="name">RESHMI RAY KARMAKAR</span>
+        <div class="typed-container">and I am a <span id="element"></span></div>
+      </div>
+      <div class="rightSection">
+        <img src="reshmi.png" alt="3D Image">
+      </div>
+    </section>
+
+    <section class="education">
+      <h2>📚 My Education</h2>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <h3>🎓 Undergraduate</h3>
+          <p>2nd Year, Netaji Subhash Engineering College</p>
+        </div>
+        <div class="edu-card">
+          <h3>🏫 Higher Secondary</h3>
+          <p>PCMB, Nava Nalanda High School</p>
+          <p>Grade: A+</p>
+        </div>
+        <div class="edu-card">
+          <h3>🏫 Secondary School</h3>
+          <p>Carmel High School</p>
+          <p>Grade: AA</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <img src="pinterest_web.png" alt="Project 1">
+      <img src="project2.png" alt="Project 2">
+      <img src="project3.png" alt="Project 3">
+    </section>
+
+    <section class="socials">
+      <h2>🔗 Connect with Me</h2>
+      <a href="https://github.com/ReshmiRayKarmakar08" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/reshmi-ray-karmakar-a9427a284" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/_yourss_truely/" target="_blank">Instagram</a>
+    </section>
+  </main>
+
+  <!-- Typed.js Script -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typed = new Typed('#element', {
+      strings: ['Student', 'Programmer', 'UI/UX Designer', 'Web Developer'],
+      typeSpeed: 60,
+      backSpeed: 40,
+      backDelay: 1500,
+      loop: true
+    });
+  </script>
+</body>
+</html>
